@@ -1,0 +1,128 @@
+:root {
+    --main-font: monsterrat, sans-serif;
+    --accent-font: fraunces, serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(30, 38%, 92%);
+    font-size: 0.9rem;
+}
+
+button {
+    background-color: hsl(158, 36%, 37%);
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 1em;
+}
+
+p {
+    font-weight: 500;
+}
+
+p, button {
+    font-family: var(--main-font);
+}
+
+.products {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    min-block-size: 90vh;
+    margin: auto auto 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    inline-size: 90vw;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+}
+
+.mobile-img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.desktop-img {
+    display: none;
+}
+
+.card-description {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-type {
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: hsl(228, 12%, 48%);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    padding-block-end: 20px;
+}
+
+.product-name, .price {
+    font-family: var(--accent-font);
+}
+
+.product-name {
+    font-size: clamp(1.2rem, 1.2rem + 1vw, 5rem);
+    line-height: clamp(1.2rem, 1.2rem + 1vw, 5rem);;
+}
+
+.product-caption {
+    color: hsl(228, 12%, 48%);
+    line-height: 1.3rem;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.promo-price {
+    color: hsl(158, 36%, 37%);
+    font-size: clamp(1.4rem, 1.4rem + 1vw, 5rem);
+    font-weight: 700;
+}
+
+.rrp {
+    text-decoration: line-through;
+    color: hsl(228, 12%, 48%);
+}
+
+.add-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9rem;
+    inline-size: 100%;
+    margin-block-start: 15px;
+}
+
+@media only screen and (min-width: 600px)
+{
+    .mobile-img {display: none}
+    .desktop-img {
+        display: block;
+        object-fit: cover;
+        width: 50%;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .card {
+        flex-direction: row;
+        max-inline-size: 600px;
+    }
+}
